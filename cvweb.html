@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículum Web</title>
+    <style>
+
+        /* COLORES */
+        /* 
+            Azul: #0074D9 Transmite profesionalismo, confianza y calma. Es un color ampliamente utilizado en entornos corporativos.
+            Verde: #2ECC40 Sugiere frescura, crecimiento y estabilidad. Es especialmente atractivo para empresas enfocadas en la sostenibilidad y el medio ambiente.
+            Gris: #AAAAAA Evoca seriedad, neutralidad y formalidad. Puede ser útil para resaltar otros colores o para dar una impresión de estabilidad y sofisticación.
+            Naranja: #FF851B Representa energía, entusiasmo y creatividad. Puede ser un color llamativo que capture la atención de los solicitantes de empleo.
+            Rojo: #FF4136 Simboliza pasión, acción y dinamismo. Se puede utilizar para resaltar áreas importantes o para transmitir un sentido de urgencia en el reclutamiento.
+            Amarillo: #FFDC00 Inspira optimismo, felicidad y claridad. Puede agregar un toque de positividad a tu marca y atraer a personas que buscan un ambiente de trabajo alegre.
+        */
+
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #21992f; /* Cambiado a verde (#2ECC40) */
+            color: white;
+            /*text-align: center;*/
+            padding: 1em 0;
+            padding-left: 10%;
+        }
+
+        /*######################## 
+            CARDS
+         #########################*/
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .content {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .main-content {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .card {
+            width: 90%;
+            max-width: 800px;
+            margin: 10px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: border 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .card:hover {
+            border: 2px solid #21992f; /* Cambiado a verde (#2ECC40) */
+        }
+        .card:hover .titulo {
+            color:#2ECC40;
+        }
+        .apartados {
+            font-size: 20px;
+        }
+
+        .empresa {
+            font-size: 18px;
+        }
+        .aptitudes-list {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+            
+        }
+        .aptitudes-list li {
+            margin: 5px 10px 5px 0;
+            background-color: #2ECC40; /* Cambiado a verde (#2ECC40) */
+            color: white;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.9em;
+        }
+
+        /*######################## 
+            SIDEBAR
+         #########################*/
+        .sidebar {
+            flex: 1;
+            width: 90%;
+            max-width: 300px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Ajuste para centrar horizontalmente */
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 3px solid black;
+            display: flex; /* Ajuste para centrar horizontalmente */
+            justify-content: center; /* Ajuste para centrar horizontalmente */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .profile-pic:hover img{
+            transform: scale(1.07); /* Aumentar el tamaño al hacer hover */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Agregar una sombra suave */
+        }
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .sidebar h3 {
+            margin-top: 0;
+            text-align: left; /* Ajuste para alinear a la izquierda */
+        }
+        .skills, .languages {
+            list-style-type: none;
+            padding: 0;
+            padding-left: 14%; /* Ajuste de la sangría */
+        }
+        .skills li, .languages li {
+            margin: 10px 0;
+        }
+        .skills .level, .languages .level {
+            background-color: #2ECC40; /* Cambiado a verde (#2ECC40) */
+            color: white;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.9em;
+        }
+        .languages li {
+            display: flex; /* Establece el contenedor de lista como un flexbox */
+            align-items: center; /* Alinea los elementos verticalmente en el centro */
+        }
+
+        .languages li div.stars {
+            margin-left: auto; /* Empuja las estrellas hacia el extremo derecho del contenedor */
+        }
+        .level:hover  {
+            background-color: #21992f;
+        }
+        .stars {
+            color: #FFD700;
+            font-size: 1.2em;
+            margin-left: 10px;
+        }
+
+        .stars:hover {
+            transform: scale(1.05); /* Aumentar el tamaño al hacer hover */
+           
+        }
+        .stars span {
+            color: #ccc;
+        }
+
+        /*######################## 
+            footer
+         #########################*/
+        footer {
+            background-color: #21992f;
+            color: white;
+            text-align: center;
+            padding: 0.1em 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="font-size: 50px;">Javier Ramírez</h1>
+        <h2 style="margin-top: -40px;">Técnico Superior en Administración de Sistemas Informáticos en Red</h2>
+    </header>
+    <div class="container">
+        <div class="content">
+            <div class="main-content">              
+                <div class="card" href="presentacion">
+                    <section>
+                        <h2>Carta de Presentación</h2>
+                        <p>Estimado/a [Nombre del Reclutador],</p>
+                        <p>[Tu carta de presentación aquí. Asegúrate de personalizar este texto para cada solicitud específica.]</p>
+                        <p>Atentamente,</p>
+                        <p>Javier Ramírez</p>
+                    </section>
+                </div>
+                <div class="card" href="curriculum">
+                    <section>
+                        <h2 style="font-size: 28px;">Javier Ramírez Gálvez</h2>
+                        <p class="titulo"style="margin-top: -26px;"><i>Técnico Superior en Administración de Sistemas Informáticos en Red</i></p>
+                        <!--<h2>Currículum</h2>
+                        <p><strong>Nombre:</strong> Javier Ramírez Gálvez</p>
+                        <p><strong>Profesión:</strong> Técnico Superior en Administración de Sistemas Informáticos en Red</p>-->
+                        <p class="apartados"><strong>Experiencia:</strong></p>
+                        <ul>
+                            <li><i class="empresa">Soho Boutique Hotels - Administrador IT </i>(2024 - Actualidad)</li>
+                            <br>
+                            <ul style="list-style: none;">Aptitudes:
+                                <div class="aptitudes-list"> 
+                                    <li class="level" style="list-style: none;">Power Platform</li>
+                                    <li class="level" style="list-style: none;">Power Apps</li>
+                                    <li class="level" style="list-style: none;">Power Automate</li>
+                                    <li class="level" style="list-style: none;">Sharepoint</li>
+                                    <li class="level" style="list-style: none;">Dataverse</li>
+                                    <li class="level" style="list-style: none;">Power BI</li>
+                                    <li class="level" style="list-style: none;">SQL Server</li>
+                                    <li class="level" style="list-style: none;">Azure AD</li>
+                                    <li class="level" style="list-style: none;">Entorno de Microsoft</li>
+                                </div> 
+                            </ul>
+                        </ul>
+                        <p class="apartados"><strong>Educación:</strong></p>
+                        <ul>
+                            <li>CESUR - Técnico Superior en Sistemas Informáticos en Red (2023 - 2025)</li>
+                            <li>Colegio La Presentación (Málaga) - Bachillerato (2018 - 2020)</li>
+                        </ul>
+                        <p class="apartados"><strong>Educación Complementaria:</strong></p>
+                        <ul>
+                            <li>CENTRO AXIOMA - Certificación en Photoshop CS6 (2018)</li>
+                            <li>CENTRO AXIOMA - Certificación en Excel (2017)</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+            <div class="sidebar">
+                <div class="profile-pic">
+                    <img src="img/retrato.png" alt="Foto de perfil">
+                </div>
+                <div class="sidebarCard">
+                    <h3>Competencias</h3>
+                    <ul class="skills">
+                        <li>Competencia 1 <span class="level">Avanzado</span></li>
+                        <li>Competencia 2 <span class="level">Intermedio</span></li>
+                    </ul>
+                </div>
+                <div class="sidebarCard"
+                >
+                    <h3>Niveles de Idiomas</h3>
+                    <ul class="languages">
+                        <li id="idiomas">Español <div class="stars">★★★★★</div></li>
+                        <li id="idiomas">Inglés <div class="stars">★★★★★</div></li>
+                        <li id="idiomas">Francés <div class="stars">★★☆☆☆</div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Javier Ramírez. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
