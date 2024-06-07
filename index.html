@@ -27,9 +27,43 @@
         header {
             background-color: #21992f; /* Cambiado a verde (#2ECC40) */
             color: white;
-            /*text-align: center;*/
-            padding: 1em 0;
-            padding-left: 10%;
+            
+        }
+        .wrapper {
+            width:90%; /* Establecemos que el ancho sera del 90% */
+            max-width:1000px; /* Aqui le decimos que el ancho máximo sera de 1000px */
+            margin:auto; /* Centramos los elementos */
+            overflow:hidden; /* Eliminamos errores de float */
+        }
+
+        header .logo {
+            color:#f2f2f2;
+            font-size:50px;
+            line-height:200px;
+            float:left;
+        }
+
+        header nav {
+            float:right;
+            line-height:200px;
+        }
+
+        header nav a {
+            display:inline-block;
+            color:#fff;
+            text-decoration:none;
+            padding:10px 20px;
+            line-height:normal;
+            font-size:20px;
+            font-weight:bold;
+            -webkit-transition:all 500ms ease;
+            -o-transition:all 500ms ease;
+            transition:all 500ms ease;
+        }
+
+        header nav a:hover {
+            background:#166820;
+            border-radius:50px;
         }
 
         /*######################## 
@@ -133,6 +167,7 @@
             margin-top: 0;
             text-align: left; /* Ajuste para alinear a la izquierda */
         }
+        
         .skills, .languages {
             list-style-type: none;
             padding: 0;
@@ -173,6 +208,33 @@
             color: #ccc;
         }
 
+        .card-socials2 {
+        display: flex;
+        height: 0;
+        opacity: 1;
+        margin-top: 20px;
+        gap: 20px;
+        transition: 0.5s;
+        }
+
+        .card-socials-btn {
+        width: 35px;
+        height: 35px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        }
+
+        .card-socials-btn svg {
+        width: 100%;
+        height: 100%;
+        fill: var(--main-color);
+        }
+        .card-socials-btn:hover {
+        transform: translateY(-5px);
+        transition: all 0.15s;
+        }
+
         /*######################## 
             footer
          #########################*/
@@ -186,13 +248,22 @@
 </head>
 <body>
     <header>
-        <h1 style="font-size: 50px;">Javier Ramírez</h1>
-        <h2 style="margin-top: -40px;">Técnico Superior en Administración de Sistemas Informáticos en Red</h2>
+        <div class="wrapper"> 
+            <div class="logo">   
+                <b>JavierRamírez</b>
+            </div>
+            <nav>
+                <a href="#presentacion"> Presentación </a>
+                <a href="#experiencia"> Experiencia </a>
+                <a href="#formacion"> Formación </a>
+                <a href="#contacto"> Contacto </a>
+            </nav>
+        </div>
     </header>
     <div class="container">
         <div class="content">
             <div class="main-content">              
-                <div class="card" href="presentacion">
+                <div class="card" id="presentacion">
                     <section>
                         <h2>Carta de Presentación</h2>
                         <p>Estimado/a [Nombre del Reclutador],</p>
@@ -201,18 +272,43 @@
                         <p>Javier Ramírez</p>
                     </section>
                 </div>
-                <div class="card" href="curriculum">
+                <div class="card">
                     <section>
                         <h2 style="font-size: 28px;">Javier Ramírez Gálvez</h2>
                         <p class="titulo"style="margin-top: -26px;"><i>Técnico Superior en Administración de Sistemas Informáticos en Red</i></p>
                         <!--<h2>Currículum</h2>
                         <p><strong>Nombre:</strong> Javier Ramírez Gálvez</p>
                         <p><strong>Profesión:</strong> Técnico Superior en Administración de Sistemas Informáticos en Red</p>-->
-                        <p class="apartados"><strong>Experiencia:</strong></p>
+                        <p class="apartados" id="experiencia"><strong>Experiencia:</strong></p>
                         <ul>
                             <li><i class="empresa">Soho Boutique Hotels - Administrador IT </i>(2024 - Actualidad)</li>
                             <br>
-                            <ul style="list-style: none;">Aptitudes:
+                            <i>Experiencia en:</i>
+                            <ul style="list-style-type:square;">
+                                <br>
+                                <li> Desarrollo de Entorno de Gestión de Empleados y Área personal </li>
+                                <br>
+                                <li> Desarrollo de Aplicación de control de turnos con verificación de QR </li>
+                                <br>
+                                <li> Intervención, supervisión y testeo de pms (personal managment system) </li>
+                                <br>
+                                <li>Administración de Servidor en la nube (AzureAD)</li>
+                                <br>
+                                <li>Administración y Configuración de base de datos (SQLServer)</li>
+                                <br>
+                                <li>Automatización de procesos mediante Power Automate (FLow)</li>
+                                <br>
+                                <li>Desarrollo de apps mediante Power Apps (Plataforma de ABM)</li>
+                                <br>
+                                <li>Creación de páginas web mediante Power Pages (MiSoho - Area Personal)</li>
+                                <br>
+                                <li>Administración de la Red</li>
+                                <br>
+                                <li>Tareas de soporte sencillas (formatear, montaje, switches, SAI, ....)</li>
+                            </ul>
+                            <br>
+                            <i>Tecnologías usadas:</i>
+                            <ul style="list-style: none;">
                                 <div class="aptitudes-list"> 
                                     <li class="level" style="list-style: none;">Power Platform</li>
                                     <li class="level" style="list-style: none;">Power Apps</li>
@@ -226,13 +322,14 @@
                                 </div> 
                             </ul>
                         </ul>
-                        <p class="apartados"><strong>Educación:</strong></p>
+                        <p class="apartados" id="formacion"><strong>Educación:</strong></p>
                         <ul>
                             <li>CESUR - Técnico Superior en Sistemas Informáticos en Red (2023 - 2025)</li>
                             <li>Colegio La Presentación (Málaga) - Bachillerato (2018 - 2020)</li>
                         </ul>
                         <p class="apartados"><strong>Educación Complementaria:</strong></p>
                         <ul>
+                            <li>UNIVERSITY OF CAMBRIDGE - B2 First (2021)</li>
                             <li>CENTRO AXIOMA - Certificación en Photoshop CS6 (2018)</li>
                             <li>CENTRO AXIOMA - Certificación en Excel (2017)</li>
                         </ul>
@@ -250,8 +347,7 @@
                         <li>Competencia 2 <span class="level">Intermedio</span></li>
                     </ul>
                 </div>
-                <div class="sidebarCard"
-                >
+                <div class="sidebarCard">
                     <h3>Niveles de Idiomas</h3>
                     <ul class="languages">
                         <li id="idiomas">Español <div class="stars">★★★★★</div></li>
@@ -259,11 +355,47 @@
                         <li id="idiomas">Francés <div class="stars">★★☆☆☆</div></li>
                     </ul>
                 </div>
+                
+                <div class="card-socials2" id="contacto">
+                    
+                    <button class="card-socials-btn linkedin">
+                        <a href="https://www.linkedin.com/in/javier-ramirez-galvez-56a69823a/" target="_blank">
+                            <svg height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg">
+                                <path d="m51.326 185.85h90.011v270.872h-90.011zm45.608-130.572c-30.807 0-50.934 20.225-50.934 46.771 0 26 19.538 46.813 49.756 46.813h.574c31.396 0 50.948-20.814 50.948-46.813-.589-26.546-19.551-46.771-50.344-46.771zm265.405 124.209c-47.779 0-69.184 26.28-81.125 44.71v-38.347h-90.038c1.192 25.411 0 270.872 0 270.872h90.038v-151.274c0-8.102.589-16.174 2.958-21.978 6.519-16.174 21.333-32.923 46.182-32.923 32.602 0 45.622 24.851 45.622 61.248v144.926h90.024v-155.323c0-83.199-44.402-121.911-103.661-121.911z"/>
+                            </svg>
+                        </a>
+                    </button> 
+                    <button class="card-socials-btn email" class="btn" onclick="copiarAlPortapapeles('miTexto')">                          
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                <g data-name="7-Email-Arrow up">
+                                    <path d="M29 4H3a3 3 0 0 0-3 3v18a3 3 0 0 0 3 3h13v-2H3a1 1 0 0 1-1-1V7.23l13.42 9.58a1 1 0 0 0 1.16 0L30 7.23V17h2V7a3 3 0 0 0-3-3zM16 14.77 3.72 6h24.56z"/>
+                                    <path d="m24.29 18.29-4 4 1.41 1.41 2.3-2.29V29h2v-7.59l2.29 2.29 1.41-1.41-4-4a1 1 0 0 0-1.41 0z"/>
+                                </g>
+                            </svg> 
+
+                        <p id="miTexto" style="visibility: hidden;">javierraga02@gmail.com</p>
+                    </button>
+                     
+                </div>
+                <p style="padding-top: 4%;">Contacta conmigo</p>
             </div>
         </div>
     </div>
     <footer>
         <p>&copy; 2024 Javier Ramírez. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+       function copiarAlPortapapeles(idElemento) {
+            var aux = document.createElement("input");
+            aux.setAttribute("value", document.getElementById(idElemento).textContent);
+            document.body.appendChild(aux);
+            aux.select();
+            aux.setSelectionRange(0, 99999); // Para dispositivos móviles
+            document.execCommand("copy");
+            document.body.removeChild(aux);
+            alert("Correo copiado al portapapeles: javierraga02@gmail.com");
+        }
+    </script>
 </body>
 </html>
